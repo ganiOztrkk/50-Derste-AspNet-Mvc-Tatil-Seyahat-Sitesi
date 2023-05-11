@@ -9,16 +9,20 @@ namespace TravelTripProje.Controllers
 {
     public class BlogController : Controller
     {
+        private readonly BlogYorum _blogYorum = new BlogYorum();
         private readonly Context _context = new Context();
         public ActionResult Index()
         {
-            var bloglar = _context.Blogs.ToList();
-            return View(bloglar);
+            _blogYorum.Deger1 = _context.Blogs.ToList();
+            _blogYorum.Deger3 = _context.Blogs.OrderByDescending(x=>x.ID).Take(3).ToList();
+            return View(_blogYorum);
         }
 
         public ActionResult BlogDetay(int id)
         {
-            return View();
+            _blogYorum.Deger1 = _context.Blogs.Where(x => x.ID == id).ToList();
+            _blogYorum.Deger2 = _context.Yorumlars.Where(x => x.BlogID == id).ToList();
+            return View(_blogYorum);
         }
     }
 }
