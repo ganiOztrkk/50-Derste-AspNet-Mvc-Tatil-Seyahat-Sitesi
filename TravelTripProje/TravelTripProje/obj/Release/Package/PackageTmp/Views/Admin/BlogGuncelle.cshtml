@@ -1,0 +1,24 @@
+﻿@model TravelTripProje.Models.Entities.Blog
+@{
+    ViewBag.Title = "BlogGuncelle";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+@using (Html.BeginForm("BlogGuncelle", "Admin", FormMethod.Post))
+{
+    @Html.HiddenFor(x=>x.ID)
+    <br/>
+    <label>Başlık</label>
+    @Html.TextBoxFor(x => x.Baslik, new { @class = "form-control", @style = "width: 40%" })
+    <br />
+    <label>Tarih</label>
+    @Html.TextBoxFor(x => x.Tarih, new { @class = "form-control", @style = "width: 40%", @placeholder = "DD/MM/YYYY" })
+    <br />
+    <label>Blog Resim URL</label>
+    @Html.TextBoxFor(x => x.BlogImage, new { @class = "form-control", @style = "width: 40%" })
+    <br />
+    <label>Blog Yazı</label>
+    @Html.TextAreaFor(x => x.Aciklama, new { @class = "form-control", @style = "width: 40%; height: 200px" })
+    <br />
+    <button class="btn btn-success">Blog Güncelle</button>
+}

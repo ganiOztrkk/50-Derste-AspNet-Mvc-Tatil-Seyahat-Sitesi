@@ -1,0 +1,23 @@
+﻿@model TravelTripProje.Models.Entities.Blog
+@{
+    ViewBag.Title = "BlogEkle";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>Blog Ekleme Sayfası</h2>
+<br/>
+<form method="post">
+    <label>Başlık</label>
+    @Html.TextBoxFor(x => x.Baslik, new { @class = "form-control", @style = "width: 40%" })
+    <br />
+    <label>Tarih</label>
+    @Html.TextBoxFor(x => x.Tarih, new { @class = "form-control", @style = "width: 40%", @placeholder="DD/MM/YYYY" })
+    <br />
+    <label>Blog Resim URL</label>
+    @Html.TextBoxFor(x => x.BlogImage, new { @class = "form-control", @style = "width: 40%" })
+    <br />
+    <label>Blog Yazı</label>
+    @Html.TextAreaFor(x => x.Aciklama, new { @class = "form-control", @style = "width: 40%; height: 200px" })
+    <br />
+    <button class="btn btn-primary">Blog Ekle</button>
+</form>

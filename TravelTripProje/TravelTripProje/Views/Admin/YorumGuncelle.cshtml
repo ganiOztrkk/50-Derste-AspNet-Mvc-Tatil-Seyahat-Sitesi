@@ -1,0 +1,22 @@
+﻿@model TravelTripProje.Models.Entities.Yorumlar
+@{
+    ViewBag.Title = "YorumGuncelle";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+
+@using (Html.BeginForm("YorumGuncelle", "Admin", FormMethod.Post))
+{
+    @Html.HiddenFor(x => x.ID)
+    <br />
+    <label>Kullanıcı</label>
+    @Html.TextBoxFor(x => x.KullaniciAdi, new { @class = "form-control", @style = "width: 40%" })
+    <br />
+    <label>Mail</label>
+    @Html.TextBoxFor(x => x.Mail, new { @class = "form-control", @style = "width: 40%"})
+    <br />
+    <label>Yorum</label>
+    @Html.TextAreaFor(x => x.Yorum, new { @class = "form-control", @style = "width: 40%; height: 200px" })
+    <br />
+    <button class="btn btn-success">Yorum Güncelle</button>
+}

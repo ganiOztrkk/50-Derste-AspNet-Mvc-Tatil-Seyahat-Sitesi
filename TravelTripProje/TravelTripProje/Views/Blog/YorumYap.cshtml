@@ -1,0 +1,12 @@
+﻿@model TravelTripProje.Models.Entities.Yorumlar
+
+<div class="content-form">
+    <h3>Yorum Yap</h3>
+    <form method="post">
+        <input type="hidden" name="BlogID" value="@ViewBag.deger" />
+        <input type="text" placeholder="Kullanıcı Ad Soyad" name="KullaniciAdi" required />
+        <input type="text" placeholder="Mail Adresi" name="Mail" required />
+        <textarea placeholder="Yorum" name="Yorum"></textarea>
+        <input type="submit" value="Gönder" />
+    </form>
+</div>
